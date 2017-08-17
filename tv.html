@@ -1,0 +1,60 @@
+<html>
+<head>
+<meta name=“viewport” content=“width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes” />
+<script type="text/javascript">
+    function vidplay(){
+        var video = document.getElementById("Video1");
+    var button = document.getElementById("play");
+    if(video.paused) {
+        video.play();
+    }else{
+        video.pause();     
+    }
+    }function restart() {
+        var video = document.getElementById("Video1");
+        video.currentTime = 0;
+    }
+    function skip(value) {
+        var video = document.getElementById("Video1");
+        video.currentTime += value;
+    }
+	onkeydown = function (e) {
+            var e = event || window.event || arguments.caller.arguments[0];
+            var video = document.getElementById("Video1");
+            if (e && e.keyCode === 37 ) {
+               video.currentTime  -= 10;
+            }
+            if (e && e.keyCode === 38 ) {
+				video.volume  += 0.1;
+            }
+            if (e && e.keyCode === 40 ) {
+				video.volume  -= 0.1;
+            }
+            if (e && e.keyCode === 39 ) {
+				video.currentTime  += 10;
+            }
+			
+        }
+	
+		
+	
+
+
+</script>
+
+</head>
+
+
+<body style=" width:100%; height:100%;"  id="body">
+<video id="Video1" src="D:\TDDownload\gz11.mkv" autoplay="autoplay" controls onclick="vidplay()" ondblclick="doubleClick()" >// Replace these with your own video files.
+<script>
+	function doubleClick(){
+		document.getElementById("Video1").webkitRequestFullScreen();
+	}
+	
+	//document.getElementById("Video1").webkitRequestFullScreen();
+</script>
+</video>
+
+</body>
+</html>
