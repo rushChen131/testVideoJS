@@ -1,0 +1,20 @@
+.video_div{
+    padding-left: 20px;
+    /*padding-top: 20px;*/
+}
+body {
+    background-image:url('../source/back.jpg');
+    background-size:cover;
+}
+ .webuploader-pick {
+    font-size: 16px;
+    background: #a6bcbf;
+    border-radius: 3px;
+    line-height: 25px;
+    padding: 0 30px;
+    color: #fff;
+    display: inline-block;
+    margin: 0 auto 5px auto;
+    cursor: pointer;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}

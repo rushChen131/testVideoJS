@@ -1,60 +1,21 @@
 <html>
 <head>
-<meta name=“viewport” content=“width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes” />
-<script type="text/javascript">
-    function vidplay(){
-        var video = document.getElementById("Video1");
-    var button = document.getElementById("play");
-    if(video.paused) {
-        video.play();
-    }else{
-        video.pause();     
-    }
-    }function restart() {
-        var video = document.getElementById("Video1");
-        video.currentTime = 0;
-    }
-    function skip(value) {
-        var video = document.getElementById("Video1");
-        video.currentTime += value;
-    }
-	onkeydown = function (e) {
-            var e = event || window.event || arguments.caller.arguments[0];
-            var video = document.getElementById("Video1");
-            if (e && e.keyCode === 37 ) {
-               video.currentTime  -= 10;
-            }
-            if (e && e.keyCode === 38 ) {
-				video.volume  += 0.1;
-            }
-            if (e && e.keyCode === 40 ) {
-				video.volume  -= 0.1;
-            }
-            if (e && e.keyCode === 39 ) {
-				video.currentTime  += 10;
-            }
-			
-        }
-	
-		
-	
-
-
-</script>
-
+<script src="js/jquery.min.js"></script>
+<script src="js/control.js"></script>
+<script src="js/list.js"></script>
+<link href="css/videoStyle.css"  type="text/css" rel="stylesheet" />
 </head>
 
-
-<body style=" width:100%; height:100%;"  id="body">
-<video id="Video1" src="D:\TDDownload\gz11.mkv" autoplay="autoplay" controls onclick="vidplay()" ondblclick="doubleClick()" >// Replace these with your own video files.
-<script>
-	function doubleClick(){
-		document.getElementById("Video1").webkitRequestFullScreen();
-	}
-	
-	//document.getElementById("Video1").webkitRequestFullScreen();
-</script>
-</video>
-
+<body id="body">
+<div class="video_div">
+	<video id="Video1" src="D:\TDDownload\gz11.mkv" autoplay="autoplay" controls onclick="vidplay()" ondblclick="doubleClick()" height="850px" width="1450px" >// Replace these with your own video files.
+	</video>
+</div>
+<div>
+	<ul id="videoList">
+	</ul>
+	<div class="webuploader-pick" onclick="addVideo()">点击选择视频</div>
+	<input type="file" name="file" class="webuploader-element-invisible" multiple="multiple" style="display: none;" id="file" >
+</div>
 </body>
 </html>
