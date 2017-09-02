@@ -1,21 +1,32 @@
 <html>
 <head>
-<script src="js/jquery.min.js"></script>
-<script src="js/control.js"></script>
-<script src="js/list.js"></script>
-<link href="css/videoStyle.css"  type="text/css" rel="stylesheet" />
+    <meta charset="utf-8">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/control.js"></script>
+    <script src="js/list.js"></script>
+    <script type="text/javascript" src="js/main.js" ></script>
+    <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body id="body">
-<div class="video_div">
-	<video id="Video1" src="D:\TDDownload\gz11.mkv" autoplay="autoplay" controls onclick="vidplay()" ondblclick="doubleClick()" height="850px" width="1450px" >// Replace these with your own video files.
+<div class="video_div" id="cans">
+	<video id="Video1" src="H://1.mp4" autoplay="autoplay" poster="" controls onclick="vidplay()" ondblclick="doubleClick()" height="85%" width="80%" >// Replace these with your own video files.
 	</video>
-</div>
-<div>
-	<ul id="videoList">
-	</ul>
-	<div class="webuploader-pick" onclick="addVideo()">点击选择视频</div>
-	<input type="file" name="file" class="webuploader-element-invisible" multiple="multiple" style="display: none;" id="file" >
+    <aside id="playList">
+        <header>
+            <h4>播放列表</h4>
+        </header>
+        <ul>
+            <li value="video/VID_20170323_193609.mp4" title="进球瞬间">进球瞬间</li>
+            <li value="video/VID_20170323_215451.mp4" title="胜利庆祝">胜利庆祝</li>
+            <li value="video/VID_20170323_193609.mp4" title="进球瞬间">进球瞬间</li>
+            <li value="video/VID_20170323_215451.mp4" title="胜利庆祝">胜利庆祝</li>
+            <li value="video/VID_20170323_193609.mp4" title="进球瞬间">进球瞬间</li>
+            <li value="video/VID_20170323_215451.mp4" title="胜利庆祝">胜利庆祝</li>
+        </ul>
+        <button title="收起播放列表" id="playList-hidden"> < </button>
+    </aside>
+    <button title="展开播放列表" id="playList-show1"> > </button>
 </div>
 </body>
 </html>
